@@ -44,7 +44,7 @@ setInterval(() => {
                     axios.post(p.return.success, { rdata: rdata.data });
                 })
                 .catch((err) => {
-                    axios.post(p.return.fail, { rdata: err });
+                    axios.post(p.return.fail, { rdata: p.data, err });
                 });
         }
     } else {
