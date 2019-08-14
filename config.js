@@ -1,5 +1,5 @@
 let configs = {
-    port: 7005
+    port: 80
 }
 
 module.exports = configs;

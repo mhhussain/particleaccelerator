@@ -6,6 +6,7 @@ let configs = require('./config');
 /// start up
 // health object
 let health = {
+    name: 'particleaccelerator',
     status: 'startup',
     msg: ''
 };
@@ -15,7 +16,7 @@ var qlock = 0;
 let q = [];
 
 // create consumer
-setInterval(() => {
+/*setInterval(() => {
     // retrieve lock
     while (true) {
         if (qlock == 0) {
@@ -28,10 +29,14 @@ setInterval(() => {
         }
     }
 
-    let qe = Array.from(q);
-    q = [];
+    let qe = [];
+    for (var i = 0; i < 100; i++) {
+        qe.push(q.shift());
+    }
+    /*let qe = Array.from(q);
+    q = [];*/
     // release lock
-    qlock--;
+    /*qlock--;
 
     // process q items
     if (qe.length > 0) {
@@ -48,10 +53,10 @@ setInterval(() => {
                 });
         }
     } else {
-        console.log('empty beat');
+        // console.log('empty beat');
     }
 
-}, 1000);
+}, 2000);*/
 
 
 let app = e();
